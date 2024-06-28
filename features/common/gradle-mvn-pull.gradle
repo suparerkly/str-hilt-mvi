@@ -1,0 +1,16 @@
+apply plugin: 'maven-publish'
+
+allprojects{
+    repositories {
+        maven {
+            url "https://gitlab.com/api/v4/projects/59221580/packages/maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Private-Token"
+                value = "glpat-cFLik9u1WmyN-9oPjia7"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
